@@ -15,7 +15,7 @@ PARENT_DIR = os.path.join(FILE_DIR, os.pardir)
 # absolute path of directory_of_interest
 dir_of_interest = os.path.join(PARENT_DIR, "resources")
 
-IMAGE_PATH = os.path.join(dir_of_interest, "images", "1188345.png")
+IMAGE_PATH = os.path.join(dir_of_interest, "images", "pir.png")
 
 VIDEO_PATH = os.path.join(dir_of_interest, "Videos","EP_1.mp4")
 st.title("Dashboard - Pirates")
@@ -29,8 +29,8 @@ type = st.radio(
 if type == 'Image':
     st.write('You selected Image.')
     
-    img = image.imread(IMAGE_PATH)
-    st.image(img, width= 800)
+    imgo = image.imread(IMAGE_PATH)
+    st.image(imgo, width= 800)
                 
     option = st.selectbox(
          'Change Color',
@@ -42,14 +42,14 @@ if type == 'Image':
         if st.button('Submit'):
             st.write('Why hello there')
             if option == "Blue":
-                st.image(img, width= 800,channels= "BGR")
+                st.image(imgo, width= 800,channels= "BGR")
                 new_title = '<p style="text-align: center; color:blue; font-size: 42px;">One Piece</p>'
             elif option == "Black":
-                Black = img[:,:,1]
+                Black = imgo[:,:,1]
                 st.image(Black, width= 800)
                 new_title = '<p style="text-align: center; color:Black; font-size: 42px;">One Piece</p>'        
             elif option == "Grey" : 
-                grey = img[:,:,0]
+                grey = imgo[:,:,0]
                 st.image(grey, width= 800)
                 new_title = '<p style="text-align: center; color:Grey; font-size: 42px;">One Piece</p>'
         
